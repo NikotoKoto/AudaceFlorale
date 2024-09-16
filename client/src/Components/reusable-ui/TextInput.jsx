@@ -1,27 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function TextInput({onChange, type, Icon , placeholder, ...restProps}) {
+export default function TextInput({onChange, type, Icon , placeholder, ...extraProps}) {
   return (
     <TextInputStyled >
         <div className='icon'>{Icon && Icon}</div>
-        <input placeholder={placeholder} onChange={onChange} type={type}></input>
+        <input placeholder={placeholder} onChange={onChange} type={type} {...extraProps}></input>
     </TextInputStyled>
   )
 }
 
 const TextInputStyled = styled.div`
  background-color: white;
+ border: 1px solid black;
     border-radius: 15px;
     display: flex;
     align-items: center;
     padding: 18px 24px;
     margin: 18px 0;
 
-    .icon-login {
+    .icon {
       font-size: 15px;
       margin-right: 8px;
-      color: grey;
+      color: #0a0d30;
     }
 
     input {
