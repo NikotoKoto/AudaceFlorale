@@ -11,12 +11,11 @@ export default function CarousselPage() {
     }
     
     const CarouselStyled = styled.div`
-    padding-top: 20px;
-      display: flex;
-      width: 100%;
+    position: relative;
+      width: 80%;
       height: 500px;
-      background: blue;
-      overflow: hidden;
+      background: #2a2a2c;
+
 
      
     `;

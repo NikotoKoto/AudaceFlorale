@@ -1,11 +1,17 @@
 import { CiSearch } from "react-icons/ci";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 
+
 export default function NavbarRightSide() {
+  //state
+  const {username} = useParams();
+  console.log(username)
   return (
+
     <NavbarRightSideStyled>
-      <span className="navbar-span"> Se connecter</span>
-      <span className="navbar-span">Panier</span>
+      <span className="navbar-span">{!username ?(<Link to={"/Login"}>Se connecter</Link>):(<span>Hey, {username}</span>)}</span>
+      <span className="navbar-span"><Link to={"/basket"}>Panier</Link></span>
       <span className="navbar-span"><CiSearch />
       </span>
     </NavbarRightSideStyled>

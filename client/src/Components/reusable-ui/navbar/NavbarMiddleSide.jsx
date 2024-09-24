@@ -7,11 +7,11 @@ export default function NavbarLeftSide() {
       <div className='navbar-menu'>
 
         <ul>
-            <li>A propos de nous</li>
-            <li>Commander un bouquet</li>
-            <li>Mariages</li>
-            <li>Deuils</li>
-            <li>Entreprises</li>
+            <li ><a href='/about'>A propos de nous</a></li>
+            <li><a href="/order">Commander un bouquet</a></li>
+            <li><a href="/wedding">Mariages</a></li>
+            <li><a href="/mourning">Deuils</a></li>
+            <li><a href="/company">Entreprises</a></li>
         </ul>
         </div>
     </NavbarMiddleSideStyled>
@@ -50,11 +50,13 @@ const NavbarMiddleSideStyled = styled.div`
     margin: 0;
   }
 
-  li {
+  li,a {
     margin: 0 15px; /* Espacement entre les items */
     color: #0a0d30;
     font-size: 20px;
     cursor: pointer;
+    text-transform: none;
+    text-decoration: none;
 
     &:hover {
       color: #ff6347; /* Changement de couleur au survol */
