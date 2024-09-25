@@ -8,7 +8,7 @@ import { IoChevronForward } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-export default function SubscribeForm({onSwitchToLogin}) {
+export default function SubscribeForm({onSwitchToLogin, className}) {
   //state
   const [newFirstName, setNewFirstName] = useState("toto");
   const [newLastName, setNewLastName] = useState("toto");
@@ -48,7 +48,7 @@ export default function SubscribeForm({onSwitchToLogin}) {
   };
   //render
   return (
-    <SubscribeFormStyled action="submit" onSubmit={handleSubmitNewAccount}>
+    <SubscribeFormStyled action="submit" onSubmit={handleSubmitNewAccount} className={className}>
       <h2>Inscrivez-vous !</h2>
       <hr />
       <div className="inputStyled">

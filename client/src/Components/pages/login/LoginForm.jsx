@@ -9,10 +9,10 @@ import Button from "../../reusable-ui/Button";
 
 
 
-export default function LoginForm({onSwitchToSubscribe}) {
+export default function LoginForm({onSwitchToSubscribe, className}) {
   //state
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("Toto");
+  const [password, setPassword] = useState("Toto");
   const navigate = useNavigate()
   //comportement
   
@@ -25,6 +25,9 @@ export default function LoginForm({onSwitchToSubscribe}) {
     setPassword(event.target.value);
   };
 
+  const handleReturnStore = () => {
+    navigate("/");
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +39,7 @@ export default function LoginForm({onSwitchToSubscribe}) {
   
   //render
   return (
-    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+    <LoginFormStyled action="submit" onSubmit={handleSubmit} className={className}>
       
       <h2>Connectez vous</h2>
       <hr />
@@ -45,8 +48,15 @@ export default function LoginForm({onSwitchToSubscribe}) {
         <TextInput Icon={<IoIosLock/>} value={password} placeholder="Mot de passe" onChange={handleChangePassword} required type="password"></TextInput>
         <span className="password-forgot">Mot de passe oublié? </span>
         
-
+        <div className="buttonStyle">
       <Button label="Acceder à mon espace" Icon={<IoChevronForward/>}/>
+      <Button
+          label="Retour à la boutique"
+          Icon={<IoChevronForward />}
+          className="buttonReturnStore"
+          onClick={handleReturnStore}
+        />
+        </div>
       <span className="noAccount" onClick={onSwitchToSubscribe}>Pas de compte ? Créer vous en un ! </span>
       </div>
     </LoginFormStyled>
@@ -54,8 +64,11 @@ export default function LoginForm({onSwitchToSubscribe}) {
 }
 
 const LoginFormStyled = styled.form`
-position: relative;
-font-family: "Dancing Script";
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script";
   text-align: center;
   max-width: 500px;
   min-width: 400px;
@@ -68,6 +81,7 @@ font-family: "Dancing Script";
     border: 1.5px solid black;
     margin-bottom: 30px;
     margin-top: 20px;
+    width: 100%;
     color: #0a0d30;
    
   }
@@ -94,6 +108,19 @@ font-family: "Dancing Script";
     }
   }
   
+
+  .buttonStyle {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .buttonReturnStore {
+    background: none;
+    color: #0a0d30;
+    border: none;
+  }
   .noAccount{
     cursor: pointer;
 
