@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function TextInput({onChange, type, Icon , placeholder, ...extraProps}) {
+export default function TextInput({onChange, type, Icon , placeholder, className, ...extraProps}) {
   return (
-    <TextInputStyled >
+    <TextInputStyled className={className} >
         <div className='icon'>{Icon && Icon}</div>
         <input placeholder={placeholder} onChange={onChange} type={type} {...extraProps}></input>
     </TextInputStyled>
@@ -17,7 +17,7 @@ const TextInputStyled = styled.div`
     display: flex;
     align-items: center;
     padding: 18px 24px;
-    margin: 18px 0;
+    margin: 18px 0 3px 0;
 
     .icon {
       font-size: 15px;

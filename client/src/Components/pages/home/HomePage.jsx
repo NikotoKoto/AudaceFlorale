@@ -4,6 +4,7 @@ import Navbar from "../../reusable-ui/navbar/Navbar"
 import CarousselPage from './homeContainer/caroussel/CarousselPage'
 import HomeContext from '../../../context/HomeContext'
 import { useMenu } from '../../../hooks/useMenu'
+
 export default function HomePage() {
 //state
 
@@ -20,7 +21,7 @@ const {menu, setMenu} =useMenu()
       <Navbar/>
       
       <CarousselPage/>
-      
+
     </HomePageStyled>
     </HomeContext.Provider>
   )

@@ -4,7 +4,7 @@ import SocialMedia from './Contact'
 import FooterNavbar from './FooterNavbar'
 import LegalMention from './LegalMention'
 
-export default function footer() {
+export default function Footer() {
   return (
     <FooterStyled>
         <SocialMedia/>
@@ -15,7 +15,7 @@ export default function footer() {
 }
 
 const FooterStyled = styled.div`
-position: absolute;
+position: relative;
 bottom: 0;
 left: 0;
 width: 100%;

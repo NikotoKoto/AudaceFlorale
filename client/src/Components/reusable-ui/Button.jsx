@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default function Button({onClick,label,className, Icon}) {
+export default function Button({onClick,label,className, Icon, ...extraProps}) {
   return (
     <ButtonStyled onClick={onClick} className={className}>
         <span>{label}</span>
@@ -20,7 +20,7 @@ width: 100%;
   text-decoration: none; //removes the text decoration in case you’re applying the .btn class to a link.
   line-height: 1;
   cursor: pointer;
-
+  margin: 20px 0;
   padding: 18px 24px;
   border-radius: 5px;
   font-size: 15px;

@@ -8,7 +8,8 @@ import { BsPerson } from "react-icons/bs";
 import Button from "../../reusable-ui/Button";
 
 
-export default function LoginForm() {
+
+export default function LoginForm({onSwitchToSubscribe}) {
   //state
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,6 +32,8 @@ export default function LoginForm() {
     setPassword('');
     navigate(`/home/${username}`)
   };
+
+  
   //render
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
@@ -40,10 +43,11 @@ export default function LoginForm() {
       <div className="Input-styled">
         <TextInput Icon={<BsPerson/>} value={username} placeholder="Nom de compte" onChange={handleChangeUsername} required type="text"></TextInput>
         <TextInput Icon={<IoIosLock/>} value={password} placeholder="Mot de passe" onChange={handleChangePassword} required type="password"></TextInput>
-      
+        <span className="password-forgot">Mot de passe oublié? </span>
+        
 
       <Button label="Acceder à mon espace" Icon={<IoChevronForward/>}/>
-      <span className="password-forgot">Mot de passe oublié? </span>
+      <span className="noAccount" onClick={onSwitchToSubscribe}>Pas de compte ? Créer vous en un ! </span>
       </div>
     </LoginFormStyled>
   );
@@ -78,8 +82,8 @@ font-family: "Dancing Script";
     color: #0a0d30;
     cursor: pointer;
     display: flex;
-    padding-top: 10px;
     justify-content: flex-end;
+    padding: 0 0 20px 0;
 
     &:hover{
       color:grey;
@@ -87,6 +91,14 @@ font-family: "Dancing Script";
 
     &:active{
       transform: scale(0.95);
+    }
+  }
+  
+  .noAccount{
+    cursor: pointer;
+
+    &:hover{
+      color:grey;
     }
   }
 `;
