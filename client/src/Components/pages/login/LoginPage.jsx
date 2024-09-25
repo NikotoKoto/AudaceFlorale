@@ -58,13 +58,13 @@ const MainContent = styled.div`
   }
 
   .form-transition-enter-active {
-    transform: translateX(0);
+    transform: translateX(50%);
     opacity: 1;
     transition: transform 500ms, opacity 500ms;
   }
 
   .form-transition-exit {
-;
+
     opacity: 1;
   }
 
