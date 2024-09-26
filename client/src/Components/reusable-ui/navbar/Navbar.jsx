@@ -13,7 +13,9 @@ export default function Navbar() {
 }
 
 const NavbarStyled = styled.div`
-  position: relative;
+  position: sticky;
+  background: white;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;

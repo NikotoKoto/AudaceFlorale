@@ -9,7 +9,7 @@ export default function Cards({imgSrc, title, price, isHoverable}) {
         </div>
        <div className='title'>{title}</div>
        <div className="price">à partir de {price} € </div>
-     <Link className="hoverText">Selectionner les options</Link>
+     <Link to={"/product"} className="hoverText">Selectionner les options</Link>
    
        
     </CardStyled>

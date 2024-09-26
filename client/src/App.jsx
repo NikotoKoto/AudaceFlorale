@@ -8,6 +8,7 @@ import AboutPage from "./Components/pages/about/AboutPage";
 import WeddingPage from "./Components/pages/wedding/WeddingPage"
 import CompanyPage from "./Components/pages/company/CompanyPage";
 import OrderPage from "./Components/pages/order/OrderPage";
+import ProductOption from "./Components/pages/order/select/ProductOption";
 function App() {
 
 
@@ -21,6 +22,7 @@ function App() {
     <Route path="/wedding" element ={<WeddingPage />}/>
     <Route path="/company" element ={<CompanyPage/>}/>
     <Route path="/about" element ={<AboutPage/>}/>
+    <Route path="/product" element ={<ProductOption/>}/>
     <Route path="/order" element ={<OrderPage/>}/>
     <Route path="/*" element ={<ErrorPage/>}/>
 
