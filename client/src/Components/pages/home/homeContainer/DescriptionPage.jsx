@@ -14,12 +14,15 @@ export default function DescriptionPage() {
       </div>
       <div className="tripleContainer">
         <div className="sideFlower">
+          <div className="titleCard">Coté Fleurs</div>
           <img />
         </div>
         <div className="sideBroc">
+          <div className="titleCard">Coté Broc'</div>
           <img />
         </div>
         <div className="sideTea">
+          <div className="titleCard">Coté salon de thé</div>
           <img />
         </div>
       </div>
@@ -31,15 +34,16 @@ const DescriptionPageStyled = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
+  padding-bottom: 50px;
 
   h1 {
     font-size: 35px;
     font-family: "Dancing Script", serif;
   }
 
-  .description{
+  .description {
     width: 50%;
     padding: 25px;
     font-style: italic;
@@ -50,32 +54,43 @@ const DescriptionPageStyled = styled.div`
     align-items: center;
   }
 
-  .tripleContainer{
-    
+  .tripleContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 50px 0 50px;
     width: 100%;
-    height: 500px;
-    gap:20px
-    
+    height: 400px;
+    gap: 20px;
+    overflow: hidden;
+  }
+  .titleCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: "Dancing Script", serif;
   }
 
-  .sideFlower{
-
+  img {
+    border: 1px solid black;
     width: 100%;
-    height: 400px;
+    height: 100%;
+  }
+
+  .sideFlower {
+    width: 100%;
+    height: 100%;
     background: red;
   }
-  .sideBroc{
-    padding-left: 50px;
+  .sideBroc {
     width: 100%;
-    height: 400px;
+    height: 100%;
     background: blue;
   }
-  .sideTea{
+  .sideTea {
     width: 100%;
-    height: 400px;
+    height: 100%;
     background: green;
   }
 `;

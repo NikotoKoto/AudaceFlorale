@@ -1,15 +1,9 @@
-import { fakeCarousselData } from "../fakeData/carousselData";
-import { useState } from "react";
+import { useState } from "react"
+import { fakeMenu } from "../fakeData/fakeData"
+export const useMenu   = () => {
 
-export const useMenu = () => {
-    const [menu, setMenu] = useState(fakeCarousselData.IMAGE)
+    const [menu, setMenu] = useState(fakeMenu.SMALL)
 
+    return {menu,setMenu}
+ }
 
-
-
-    
-    return {menu, setMenu}
-
-
-
-}

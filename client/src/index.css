@@ -1,10 +1,19 @@
+/* Appliquer à tout le document */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open sans", sans-serif;
+  height: 100%;
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et autres navigateurs WebKit */
+}
+
+/* S'assurer que toutes les boîtes respectent la taille des bordures et padding */
 * {
   box-sizing: inherit;
   margin: 0;

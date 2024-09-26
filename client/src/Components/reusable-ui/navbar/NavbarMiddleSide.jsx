@@ -3,7 +3,8 @@ import {Link} from "react-router-dom"
 export default function NavbarLeftSide() {
   return (
     <NavbarMiddleSideStyled>
-      <h1>Audace Florale</h1>
+      <Link to={"/"}><h1 >Audace Florale</h1></Link>
+      
       <div className='navbar-menu'>
 
         <ul>
