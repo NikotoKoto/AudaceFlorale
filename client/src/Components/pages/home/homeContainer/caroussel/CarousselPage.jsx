@@ -1,22 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const images = [
-  {
-    src: "https://via.placeholder.com/800x400/ff6347/ffffff?text=Image+1",
-    buttonText: "Commandez votre bouquet",
-    buttonLink: "/order",
-    title: "Fleur de saison",
-  },
-  {
-    src: "https://via.placeholder.com/800x400/4682b4/ffffff?text=Image+2",
-    buttonText: "Découvrez notre travail",
-    buttonLink: "/wedding",
-    title: "Je me marie",
-  },
-];
 
-export default function CarousselPage() {
+
+export default function CarousselPage({images}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 

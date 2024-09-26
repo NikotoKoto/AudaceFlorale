@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import CardHome from "./CardHome";
 
-export default function DescriptionPage() {
+export default function Description({imageDesc}) {
   return (
     <DescriptionPageStyled>
       <h1>AUDACE FLORALE, UN CONCEPT STORE UNIQUE</h1>
@@ -13,18 +14,15 @@ export default function DescriptionPage() {
         végan au salon de thé !
       </div>
       <div className="tripleContainer">
-        <div className="sideFlower">
-          <div className="titleCard">Coté Fleurs</div>
-          <img />
-        </div>
-        <div className="sideBroc">
-          <div className="titleCard">Coté Broc'</div>
-          <img />
-        </div>
-        <div className="sideTea">
-          <div className="titleCard">Coté salon de thé</div>
-          <img />
-        </div>
+        
+         {imageDesc.map(({id,title, src}) => {
+          return(
+            <CardHome
+            key={id}
+            title={title}
+            img={src} />
+          )
+         })} 
       </div>
     </DescriptionPageStyled>
   );
@@ -63,34 +61,5 @@ const DescriptionPageStyled = styled.div`
     gap: 20px;
     overflow: hidden;
   }
-  .titleCard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    text-transform: uppercase;
-    font-family: "Dancing Script", serif;
-  }
-
-  img {
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-  }
-
-  .sideFlower {
-    width: 100%;
-    height: 100%;
-    background: red;
-  }
-  .sideBroc {
-    width: 100%;
-    height: 100%;
-    background: blue;
-  }
-  .sideTea {
-    width: 100%;
-    height: 100%;
-    background: green;
-  }
+ 
 `;

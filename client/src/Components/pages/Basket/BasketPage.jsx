@@ -5,3 +5,5 @@ export default function BasketPage() {
     <div>BasketPage</div>
   )
 }
+
+const BasketPageStyled

@@ -59,6 +59,7 @@ const CardStyled = styled.div`
     font-size: 15px;
     text-transform: uppercase;
   font-family:"Dancing Script", serif;
+  font-weight: bold;
   }
 
   .hoverText{
@@ -75,7 +76,8 @@ const CardStyled = styled.div`
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
-
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   &:hover .hoverText {
