@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import Navbar from "../../reusable-ui/navbar/Navbar"
 import CarousselPage from './homeContainer/caroussel/CarousselPage'
 import HomeContext from '../../../context/HomeContext'
-import { useMenu } from '../../../hooks/useMenu'
+import Footer from "../../reusable-ui/footer/Footer"
+import DescriptionPage from './homeContainer/DescriptionPage'
+import { useImageCaroussel } from '../../../hooks/useimageCaroussel'
 
 export default function HomePage() {
 //state
-
-const {menu, setMenu} =useMenu()
+const {imageCaroussel, setImageCaroussel} = useImageCaroussel()
   const HomeContextValue = {
-    menu, setMenu
+    imageCaroussel, setImageCaroussel
   }
   //Comportement
 
@@ -21,7 +22,8 @@ const {menu, setMenu} =useMenu()
       <Navbar/>
       
       <CarousselPage/>
-
+      <DescriptionPage/>
+      <Footer/>
     </HomePageStyled>
     </HomeContext.Provider>
   )

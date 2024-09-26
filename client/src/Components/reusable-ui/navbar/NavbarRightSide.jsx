@@ -1,13 +1,25 @@
 import { CiSearch } from "react-icons/ci";
 import styled from "styled-components";
+import { Link, useParams } from "react-router-dom";
+import Panier from "../../pages/Basket/BasketPage";
+
 
 export default function NavbarRightSide() {
+  const { FirstName } = useParams();
+
   return (
     <NavbarRightSideStyled>
-      <span className="navbar-span"> Se connecter</span>
-      <span className="navbar-span">Panier</span>
-      <span className="navbar-span"><CiSearch />
-      </span>
+      <a className="navbar-a">
+        {FirstName ? (
+          `Bonjour ${FirstName}`
+        ) : (
+          <Link to={"/login"}>Se connecter</Link>
+        )}
+      </a>
+      <a className="navbar-a"><Link to={"/basket"}>Panier</Link></a>
+      <a className="navbar-a">
+        <CiSearch />
+      </a>
     </NavbarRightSideStyled>
   );
 }
@@ -21,10 +33,12 @@ const NavbarRightSideStyled = styled.div`
   justify-content: center;
   align-items: center;
 
-  .navbar-span {
+  .navbar-a, a{
     margin-left: 30px;
     color: #0a0d30;
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
 
     &:hover {
@@ -37,5 +51,5 @@ const NavbarRightSideStyled = styled.div`
     }
   }
 
-  
+ 
 `;

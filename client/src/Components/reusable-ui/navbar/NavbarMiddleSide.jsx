@@ -1,17 +1,18 @@
 import styled from 'styled-components'
-
+import {Link} from "react-router-dom"
 export default function NavbarLeftSide() {
   return (
     <NavbarMiddleSideStyled>
-      <h1>Audace Florale</h1>
+      <Link to={"/"}><h1 >Audace Florale</h1></Link>
+      
       <div className='navbar-menu'>
 
         <ul>
-            <li>A propos de nous</li>
-            <li>Commander un bouquet</li>
-            <li>Mariages</li>
-            <li>Deuils</li>
-            <li>Entreprises</li>
+            <li><Link to={"/about"} >A propos de nous</Link></li>
+            <li><Link to={"/order"}>Commander un bouquet</Link></li>
+            <li><Link to={"/wedding"}>Mariages</Link></li>
+            <li><Link to={"/mourning"}>Deuils</Link></li>
+            <li><Link to={"/company"}>Entreprises</Link></li>
         </ul>
         </div>
     </NavbarMiddleSideStyled>
@@ -50,14 +51,19 @@ const NavbarMiddleSideStyled = styled.div`
     margin: 0;
   }
 
-  li {
-    margin: 0 15px; /* Espacement entre les items */
+
+    a{
+      margin: 0 15px; /* Espacement entre les items */
     color: #0a0d30;
     font-size: 20px;
+    font-family: "Dancing Script", serif;
     cursor: pointer;
+      text-decoration: none;
 
-    &:hover {
-      color: #ff6347; /* Changement de couleur au survol */
+      &:hover{
+        color: grey;
+      }
+      
     }
-  }
+  
 `
