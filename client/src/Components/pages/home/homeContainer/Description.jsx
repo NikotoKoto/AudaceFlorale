@@ -6,13 +6,13 @@ export default function Description({imageDesc}) {
   return (
     <DescriptionPageStyled>
       <h1>AUDACE FLORALE, UN CONCEPT STORE UNIQUE</h1>
-      <div className="description">
+      <p className="description">
         Principalement fleuriste - décorateur, Yann est un réel passionné depuis
         1996. Dans son concept-store, il a souhaité nous transmettre sa passion
         floral, mais aussi son engouement pour les objets chinés avec soin. Vous
         pourrez découvrir ce lieu en prenant le temps de déguster un cookie
         végan au salon de thé !
-      </div>
+      </p>
       <div className="tripleContainer">
         
          {imageDesc.map(({id,title, src}) => {

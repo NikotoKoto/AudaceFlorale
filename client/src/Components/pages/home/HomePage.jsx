@@ -27,7 +27,7 @@ export default function HomePage() {
         <Navbar />
 
         <CarousselPage images={imageCaroussel} />
-        <Description imageDesc={imageDesc}/>
+        <Description imageDesc={imageDesc} />
         <Footer />
       </HomePageStyled>
     </HomeContext.Provider>

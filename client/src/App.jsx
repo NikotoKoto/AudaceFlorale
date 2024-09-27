@@ -9,10 +9,13 @@ import WeddingPage from "./Components/pages/wedding/WeddingPage"
 import CompanyPage from "./Components/pages/company/CompanyPage";
 import OrderPage from "./Components/pages/order/OrderPage";
 import ProductOption from "./Components/pages/order/select/ProductOption";
+import ScrollToTop from "./utils/scrollToTop";
 function App() {
 
 
   return (
+    <>
+    <ScrollToTop/>
    <Routes>
     <Route path="/" element ={<HomePage />}/>
     <Route path="/login" element ={<LoginPage/>}/>
@@ -27,6 +30,7 @@ function App() {
     <Route path="/*" element ={<ErrorPage/>}/>
 
    </Routes>
+   </>
   )
 }
 

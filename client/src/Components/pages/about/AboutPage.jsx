@@ -17,11 +17,11 @@ export default function AboutPage() {
 const AboutPageStyled = styled.div`
   .containerAbout {
     padding-top: 50px;
-    max-width: 740px; /* Limite la largeur du conteneur */
-    margin: 0 auto;   /* Centre horizontalement le conteneur */
+    max-width: 740px; 
+    margin: 0 auto;   
     display: flex;
     justify-content: center;
-    flex-direction: column; /* Aligne les éléments de haut en bas */
-    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+    flex-direction: column; 
+    text-align: center; 
   }
 `;

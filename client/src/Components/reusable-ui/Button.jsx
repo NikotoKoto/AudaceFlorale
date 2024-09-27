@@ -22,7 +22,6 @@ width: 100%;
   cursor: pointer;
   margin: 20px 0;
   padding: 18px 24px;
-  border-radius: 5px;
   font-size: 15px;
   font-weight: 800;
   color: white;

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-export default function Cards({imgSrc, title, price, isHoverable}) {
+import OrderContext from '../../context/OrderContext';
+export default function Cards({imgSrc, title, price, isHoverable,color}) {
+
+ 
   return (
     <CardStyled>
               <div className="imgCards">
@@ -9,7 +12,7 @@ export default function Cards({imgSrc, title, price, isHoverable}) {
         </div>
        <div className='title'>{title}</div>
        <div className="price">à partir de {price} € </div>
-     <Link to={"/product"} className="hoverText">Selectionner les options</Link>
+     <Link to={"/product"} color={color} className="hoverText">Selectionner les options</Link>
    
        
     </CardStyled>
