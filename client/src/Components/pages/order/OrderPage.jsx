@@ -6,6 +6,7 @@ import Cards from "../../reusable-ui/Cards";
 import { useMenu } from "../../../hooks/useMenu";
 import OrderContext from "../../../context/OrderContext";
 import { EMPTY_ITEM } from "../../../enums/item";
+import { checkIfProductIsClicked } from "./select/helper";
 export default function OrderPage() {
   const { menu, setMenu} = useMenu();
   const [itemSelected, setItemSelected] = useState(EMPTY_ITEM);
@@ -28,6 +29,7 @@ export default function OrderPage() {
                 imgSrc={imageSource}
                 price={price}
                 title={title}
+                
               />
             );
           })}

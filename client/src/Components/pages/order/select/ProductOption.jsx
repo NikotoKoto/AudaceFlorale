@@ -4,8 +4,8 @@ import Navbar from "../../../reusable-ui/navbar/Navbar";
 import Footer from "../../../reusable-ui/footer/Footer";
 import Button from "../../../reusable-ui/Button";
 import { IoChevronForward } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
-import { fakeDataSelection } from "./Color&SizeSelection";
+import { useLocation, useNavigate } from "react-router-dom";
+import { DataSelection } from "./Color&SizeSelection";
 import { useState } from "react";
 
 export default function ProductOption() {
@@ -13,6 +13,8 @@ export default function ProductOption() {
   const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState();
   const [selectedSize, setSelectedSize] = useState();
+  const location = useLocation();
+  const { imgSrc, title, price } = location.state || {};
 
   //comportement
   const handleBasketClick = () => {
@@ -34,19 +36,19 @@ export default function ProductOption() {
       <Navbar />
       <div className="container">
         <div className="image">
-          <img src="/images/testBasket.png" />
+          <img src={imgSrc} />
           <p>
             photo non contractuelle - les fleurs peuvent +/- varier selon
             l’arrivage de fleurs hebdomadaire.
           </p>
         </div>
         <div className="infos">
-          <h3 className="title">September Mood !</h3>
-          <h4 className="price">35 € ou plus</h4>
+          <h3 className="title">{title}</h3>
+          <h4 className="price">{price} € ou plus</h4>
 
           <div className="colors">Couleur(s)</div>
           <div className="CardItem">
-            {fakeDataSelection.COLORS.map(({ id, colors }) => {
+            {DataSelection.COLORS.map(({ id, colors }) => {
               return (
                 <CardItem
                   key={id}
@@ -60,7 +62,7 @@ export default function ProductOption() {
 
           <div className="size">Taille</div>
           <div className="CardItem">
-            {fakeDataSelection.SIZE.map(({ id, size }) => {
+            {DataSelection.SIZE.map(({ id, size }) => {
               return (
                 <CardItem
                   key={id}
@@ -77,17 +79,11 @@ export default function ProductOption() {
         <h1>UNE LIVRAISON 100% GARANTIE !</h1>
         <hr />
         <p>
-          Vous avez choisis un bouquet de saison, confectionné par nos
-          passionnés fleuristes. Audace Florale livre des bouquets de fleurs
-          dans le secteur proche de son enseigne, mais afin de vous garantir une
-          livraison parfaite, nous avons besoin d’un maximum d’informations. Nos
-          livrés sont toujours contactés avant la livraison, afin que nous
-          soyons sûr de leurs présence et de trouver une solution si ces
-          derniers ne peuvent pas.
+          {DataSelection.paragrapheDelivery}
         </p>
         <Button
           className="product-btn"
-          label="Acceder au panier"
+          label="Ajouter au panier"
           Icon={<IoChevronForward />}
           onClick={handleBasketClick}
         />
@@ -181,7 +177,7 @@ const ProductOptionStyled = styled.div`
 
   .delivery {
     max-width: 36%;
-    padding: 50px 0 50px 0;
+    padding: 20px 0 50px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -202,7 +198,7 @@ const ProductOptionStyled = styled.div`
     }
 
     .product-btn {
-      max-width: 40%;
+      max-width: 45%;
     }
   }
 `;
