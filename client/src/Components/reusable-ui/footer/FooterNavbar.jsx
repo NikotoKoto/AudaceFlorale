@@ -6,11 +6,11 @@ export default function FooterNavbar() {
     <FooterNavbarStyled>
       <h3>Audace Florale, pour vous servir</h3>
       <ul>
-        <li>A propos de nous</li>
-        <li>Commander un bouqet</li>
-        <li>Mariages</li>
-        <li>Deuils</li>
-        <li>Entreprises</li>
+        <li><a href='/about'>A propos de nous</a></li>
+        <li><a href="/order">Commander un bouquet</a></li>
+        <li><a href="/wedding">Mariages</a></li>
+        <li><a href="/mourning">Deuils</a></li>
+        <li><a href="/company">Entreprises</a></li>
       </ul>
     </FooterNavbarStyled>
   )
@@ -33,6 +33,16 @@ ul {
 
   li{
     padding-bottom: 10px;
+    
+    a{
+      color: white;
+      text-decoration: none;
+     
+         }
+
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 }
  

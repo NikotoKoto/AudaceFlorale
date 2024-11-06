@@ -5,12 +5,12 @@ export default function LegalMention() {
   return (
     <LegalMentionStyled>
       <h3>Les mentions légales</h3>
-      <span>CGV</span>
-      <span>CGU</span>
-      <span>Mentions légales fleuriste</span>
-      <span>Politique de confidentialité</span>
-      <span>Politique de retour et de remboursement</span>
-      <span>Politique d'expédition</span>
+      <a href=''>CGV</a>
+      <a href=''>CGU</a>
+      <a href=''>Mentions légales fleuriste</a>
+      <a href=''>Politique de confidentialité</a>
+      <a href=''>Politique de retour et de remboursement</a>
+      <a href=''>Politique d'expédition</a>
     </LegalMentionStyled>
   )
 }
@@ -27,7 +27,12 @@ h3{
   padding-bottom: 15px;
   text-transform: uppercase;
 }
-span{
+a{
   padding-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  &:hover{
+    transform: scale(1.1);
+  }
 }
 `

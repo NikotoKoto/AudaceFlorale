@@ -15,12 +15,13 @@ export default function Description({imageDesc}) {
       </p>
       <div className="tripleContainer">
         
-         {imageDesc.map(({id,title, src}) => {
+         {imageDesc.map(({id,title, src, link}) => {
           return(
             <CardHome
             key={id}
             title={title}
-            img={src} />
+            img={src} 
+            link={link}/>
           )
          })} 
       </div>
@@ -50,14 +51,16 @@ const DescriptionPageStyled = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-bottom:50px
   }
 
   .tripleContainer {
     display: grid;
+
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 50px 0 50px;
     width: 100%;
-    height: 400px;
+    height: 600px;
     gap: 20px;
     overflow: hidden;
   }

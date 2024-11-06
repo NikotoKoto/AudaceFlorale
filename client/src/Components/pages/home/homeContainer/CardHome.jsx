@@ -1,18 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function CardHome({ title, img }) {
+export default function CardHome({ title, img, link }) {
   return (
-    <CardHomeStyled>
-      <div className="titleCard">{title}</div>
-      <img src={img} />
-    </CardHomeStyled>
+    
+      <CardHomeStyled >
+        
+          <div className="titleCard">{title}</div>
+          <a href={link}>
+          <div className="imageContainer">
+            <img src={img} alt={title} />
+          </div>
+        </a>
+      </CardHomeStyled>
   );
 }
 
-const CardHomeStyled = styled.div`
+const CardHomeStyled = styled.a`
   width: 100%;
-  height: 100%;
+  height: 600px;
+
+  
+ 
 
 
   .titleCard {
@@ -24,9 +33,28 @@ const CardHomeStyled = styled.div`
     font-family: "Dancing Script", serif;
   }
 
-  img {
-    border: 1px solid black;
+  a{
+  text-decoration: none;
+  color: black;
+}
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
+
+    &:hover{
+    transform: scale(1.01);
+    transition: 0.5s;
+
+  }
+  }
+
+  img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
   }
 `;

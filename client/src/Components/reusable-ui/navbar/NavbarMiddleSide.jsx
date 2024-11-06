@@ -8,7 +8,7 @@ export default function NavbarLeftSide() {
       <div className='navbar-menu'>
 
         <ul>
-            <li><Link to={"/about"} >A propos de nous</Link></li>
+            <li><Link to={"/about"} >Notre Histoire</Link></li>
             <li><Link to={"/order"}>Commander un bouquet</Link></li>
             <li><Link to={"/wedding"}>Mariages</Link></li>
             <li><Link to={"/mourning"}>Deuils</Link></li>
@@ -25,6 +25,7 @@ const NavbarMiddleSideStyled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 
   h1{
     font-family: "Dancing Script", serif;
@@ -42,6 +43,7 @@ const NavbarMiddleSideStyled = styled.div`
     display: flex;
     justify-content: center; /* Centrer le menu horizontalement */
     align-items: flex-end; /* Aligner les items en bas */
+    margin-bottom: 15px;
   }
 
   ul {
