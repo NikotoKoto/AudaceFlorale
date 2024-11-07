@@ -10,9 +10,9 @@ export default function NavbarLeftSide() {
         <ul>
             <li><Link to={"/about"} >Notre Histoire</Link></li>
             <li><Link to={"/order"}>Commander un bouquet</Link></li>
-            <li><Link to={"/wedding"}>Mariages</Link></li>
-            <li><Link to={"/mourning"}>Deuils</Link></li>
+            <li><Link to={"/event"}>Evenements</Link></li>
             <li><Link to={"/company"}>Entreprises</Link></li>
+            <li><Link to={"/news"}>Actualités</Link></li>
         </ul>
         </div>
     </NavbarMiddleSideStyled>

@@ -3,8 +3,8 @@ const EMPTY = []
 const SMALL = [
   {
     id: "1",
-    imageSource: "/images/menuAssets/jetaime.webp",
-    title: "Je t'aime",
+    imageSource: "/images/menuAssets/champettre.jpg",
+    title: "Le Louis",
     price: 35,
     quantity: 0,
     isAvailable: true,
@@ -12,7 +12,7 @@ const SMALL = [
   },
   {
     id: "2",
-    imageSource: "/images/menuAssets/september.jpg",
+    imageSource: "/images/menuAssets/septemberMood.jpg",
     title: "September Mood",
     price: 35,
     quantity: 0,

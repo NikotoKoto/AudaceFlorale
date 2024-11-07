@@ -21,7 +21,7 @@ export default function Description({imageDesc}) {
             key={id}
             title={title}
             img={src} 
-            link={link}/>
+            />
           )
          })} 
       </div>

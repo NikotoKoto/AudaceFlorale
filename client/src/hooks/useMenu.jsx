@@ -6,3 +6,8 @@ export const useMenu = () => {
 
   return { menu, setMenu };
 };
+
+export const useMenuLastCreation =() => {
+  const [lastCreationMenu, setLastCreationMenu] = useState(fakeMenu.SMALL)
+  return {lastCreationMenu,setLastCreationMenu}
+}

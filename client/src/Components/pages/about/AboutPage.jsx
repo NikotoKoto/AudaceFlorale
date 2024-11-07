@@ -19,6 +19,7 @@ export default function AboutPage() {
 }
 
 const AboutPageStyled = styled.div`
+  background: linear-gradient(135deg, #b2b5e0, #ffffff);
  .title{
   display: flex;
   align-items: center;
@@ -27,7 +28,6 @@ const AboutPageStyled = styled.div`
 
   h1{
   color: #0a0d30;
-  font-size: 50px;
   font-family: "Dancing Script";
   font-style: italic;
   font-size: 70px;

@@ -9,9 +9,10 @@ export default function Cards({
   isHoverable,
   color,
   isSelectedCardOrder,
+  className,
 }) {
   return (
-    <CardStyled isSelectedCardOrder={isSelectedCardOrder}>
+    <CardStyled className={className} isSelectedCardOrder={isSelectedCardOrder}>
       <div className="imgCards">
         <img src={imgSrc} />
       </div>

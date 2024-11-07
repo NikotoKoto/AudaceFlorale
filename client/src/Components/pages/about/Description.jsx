@@ -79,6 +79,7 @@ const TimelineStyled = styled.div`
   padding: 50px 20px;
   overflow: hidden;
 
+
   /* Large vertical arrow line */
   .arrow-line {
     position: absolute;
