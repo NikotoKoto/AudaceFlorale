@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusable-ui/Button";
-
+import { WeddingContent } from "./wedding/textWedding";
 export default function Wedding() {
   return (
     <WeddingStyled>
@@ -18,20 +17,10 @@ export default function Wedding() {
         />
       </div>
       <div className="textWeddingContent">
-        <h1 className="weddingTitle">Mariage</h1>
-        <p className="weddingText">
-          Les défis se relèvent, les projets se construisent et votre céremonies
-          s’impregnent d’un esprit singulier et remarquable.
-          </p>
-          <p className="weddingText">
-          Le personnel d'Audace Florale mettent a votre service tout leur savoir
-          faire et leur expérience pour vous offrir une décoration florale
-          unique et inoubliable.
-          </p>
-          <p className="weddingText">
-          C’est en nous inspirant de votre style, du lieu et des couleurs que
-          nous ferons de cet événement le plus beau jour de votre vie !
-        </p>
+        <h1 className="weddingTitle">{WeddingContent.title}</h1>
+        <p className="weddingText">{WeddingContent.text1}</p>
+        <p className="weddingText">{WeddingContent.text2}</p>
+        <p className="weddingText">{WeddingContent.text3}</p>
 
         <Button label="Découvrir" className="Wedding-btn" onClick={() => {}} />
       </div>
@@ -102,7 +91,7 @@ const WeddingStyled = styled.div`
     }
 
     .weddingText {
-        margin: 5px;
+      margin: 5px;
       font-size: 25px;
       font-weight: 400;
       color: #0a0d30;
@@ -110,8 +99,8 @@ const WeddingStyled = styled.div`
       text-align: justify;
     }
 
-    .Wedding-btn{
-        width: 30%;
+    .Wedding-btn {
+      width: 30%;
     }
   }
 `;
