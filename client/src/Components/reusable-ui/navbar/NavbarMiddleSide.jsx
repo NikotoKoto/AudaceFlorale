@@ -8,7 +8,7 @@ export default function NavbarLeftSide() {
       <div className='navbar-menu'>
 
         <ul>
-            <li><Link to={"/about"} >Notre Histoire</Link></li>
+            <li><Link to={"/about"} >Notre histoire</Link></li>
             <li><Link to={"/order"}>Commander un bouquet</Link></li>
             <li><Link to={"/event"}>Evenements</Link></li>
             <li><Link to={"/company"}>Entreprises</Link></li>

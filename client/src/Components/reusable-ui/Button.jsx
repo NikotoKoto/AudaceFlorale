@@ -1,16 +1,23 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export default function Button({onClick,label,className, Icon, ...extraProps}) {
+export default function Button({
+  onClick,
+  label,
+  className,
+  Icon,
+  disabled,
+  ...extraProps
+}) {
   return (
-    <ButtonStyled onClick={onClick} className={className}>
-        <span>{label}</span>
-        <div className="icon">{Icon && Icon}</div>
+    <ButtonStyled onClick={onClick} className={className} disabled={disabled}>
+      <span>{label}</span>
+      <div className="icon">{Icon && Icon}</div>
     </ButtonStyled>
-  )
+  );
 }
 
 const ButtonStyled = styled.button`
-width: 100%;
+  width: 100%;
   border: 1px solid red;
   display: inline-flex;
   justify-content: center;
@@ -28,24 +35,32 @@ width: 100%;
   background-color: #0a0d30;
   border: 1px solid #0a0d30;
 
-cursor: pointer;
+  cursor: pointer;
 
-
-.icon{
+  .icon {
     padding-left: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-}
+  }
 
-&:hover{
+  &:hover {
     background: white;
     color: #0a0d30;
-}
+  }
 
-&:active{
+  &:active {
     transform: scale(0.95);
-}
+  }
 
-`
+  &:disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+`;

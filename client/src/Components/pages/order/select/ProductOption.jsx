@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import CardItem from "./CardItem";
 import Navbar from "../../../reusable-ui/navbar/Navbar";
 import Footer from "../../../reusable-ui/footer/Footer";
@@ -6,19 +6,31 @@ import Button from "../../../reusable-ui/Button";
 import { IoChevronForward } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
 import { DataSelection } from "./Color&SizeSelection";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import OrderContext from "../../../../context/OrderContext";
 
 export default function ProductOption() {
   //state
   const navigate = useNavigate();
+  const { itemSelected, setItemSelected } = useContext(OrderContext);
   const [selectedColor, setSelectedColor] = useState();
   const [selectedSize, setSelectedSize] = useState();
   const location = useLocation();
   const { imgSrc, title, price } = location.state || {};
-
+  const isDisabled = !selectedColor || !selectedSize;
   //comportement
+
   const handleBasketClick = () => {
-    navigate("/basket");
+    if (!isDisabled) {
+      setItemSelected({
+        ...itemSelected,
+        color: selectedColor,
+        size: selectedSize,
+      });
+      navigate("/basket");
+    } else {
+      alert("Veuillez choisir une couleur et une taille");
+    }
   };
 
   const handleColorClick = (colors) => {
@@ -78,14 +90,13 @@ export default function ProductOption() {
       <div className="delivery">
         <h1>UNE LIVRAISON 100% GARANTIE !</h1>
         <hr />
-        <p>
-          {DataSelection.paragrapheDelivery}
-        </p>
+        <p>{DataSelection.paragrapheDelivery}</p>
         <Button
           className="product-btn"
           label="Ajouter au panier"
           Icon={<IoChevronForward />}
           onClick={handleBasketClick}
+          disabled={isDisabled}
         />
       </div>
 

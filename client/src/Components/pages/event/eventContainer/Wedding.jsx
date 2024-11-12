@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../../../reusable-ui/Button";
-import { WeddingContent } from "./wedding/textWedding";
+import { WeddingContent } from "./textEvent/textWedding";
+
 export default function Wedding() {
   return (
     <WeddingStyled>
@@ -9,11 +10,13 @@ export default function Wedding() {
           src="images/WeddingImage/carsFlower.jpg"
           alt=""
           className="image img1"
+
         />
         <img
           src="images/WeddingImage/ceremonyWedding.jpg"
           alt=""
           className="image img2"
+
         />
       </div>
       <div className="textWeddingContent">
@@ -56,13 +59,13 @@ const WeddingStyled = styled.div`
     top: 0;
     left: 0;
     object-fit: cover;
-    animation-delay: 0.3s;
+    animation-delay: 1s;
   }
   .img2 {
     top: 0px;
     left: 460px;
     object-fit: cover;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
   }
 
   @keyframes fadeIn {
