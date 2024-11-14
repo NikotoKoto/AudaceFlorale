@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                                  // Version ECMAScript cible
+    "module": "commonjs",                                // Type de module généré
+    "jsx": "react-jsx",                                  // Support JSX pour React
+    "strict": true,                                      // Active les vérifications strictes des types
+    "esModuleInterop": true,                             // Interopérabilité avec CommonJS
+    "skipLibCheck": true,                                // Ignore les vérifications des types dans les fichiers .d.ts
+    "forceConsistentCasingInFileNames": true,            // Vérifie la casse dans les noms de fichiers
+
+    // Support des alias
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@context/*": ["context/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@theme/*": ["theme/*"]
+    },
+
+    // Autres options
+    "moduleResolution": "node",                         // Résolution des modules Node.js
+    "resolveJsonModule": true,                          // Permet d'importer des fichiers JSON
+    "noImplicitAny": true,                              // Empêche l'utilisation implicite de `any`
+    "strictNullChecks": true,                           // Vérifie les `null` et `undefined`
+    "noImplicitThis": true,                             // Vérifie l'utilisation implicite de `this`
+    "strictFunctionTypes": true                         // Vérifie la compatibilité des types dans les fonctions
+  },
+  "exclude": ["node_modules", "dist"]                   // Exclut les dossiers inutiles
+}
